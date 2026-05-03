@@ -1,6 +1,8 @@
 package service
 
+import "context"
+
 type URLService interface {
-	CreateShortUrl(originalUrl string) (string, error)
-	GetOriginalUrl(code string) (string, error)
+	CreateShortUrl(ctx context.Context, originalUrl string) (string, error)
+	GetOriginalUrl(ctx context.Context, code string) (string, error)
 }
